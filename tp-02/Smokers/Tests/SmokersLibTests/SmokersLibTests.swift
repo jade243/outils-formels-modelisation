@@ -40,16 +40,11 @@ class SmokersLibTests: XCTestCase {
             XCTAssert(graph!.successors.count == 0)
         }
 
-        print("right with p=0")
-
         graph = net.markingGraph(from: [p: 1])
         XCTAssertNotNil(graph)
         if graph != nil {
-            print("not nil")
             XCTAssert(graph!.marking == [p: 1])
-            print(graph!.marking)
             XCTAssert(graph!.successors.count == 1)
-            print(graph!.successors.count)
 
             let successor = graph!.successors[t]
             XCTAssertNotNil(successor)
